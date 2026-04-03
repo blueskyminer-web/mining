@@ -1,7 +1,5 @@
  // global variables 
- //   let IndexYear = "2026";
-
-  
+ 
     let currentMonth = "";
     let currentYear = "";
     let PostTitles = new Array();
@@ -12,7 +10,11 @@
     let PostTags = new Array();
     let PostWalk = new Array();
     let PostSummary = new Array();
-  
+//        Sort out the diary entry type required
+         if (IndexType== "")
+         {IndexType="Index";
+         }
+//       Function called when the extract returns  
   function LoadTheArchive(TotalFeed)
 {
     if("entry" in TotalFeed.feed)
@@ -44,11 +46,6 @@
               ThisSummaryShort = ThisSummaryFull.substring(0,ThisSummaryFull.lastIndexOf(".")+1)
                   }
         
-//        if(ThisSummaryFull.search("more")>0)
-//        {
-//          ThisSummaryShort = "shortned" + ThisSummaryFull.search("--more--")
-//        }
-        
         // loop around the categories (tags) to get them all in one field. And also manipulate the marker ones.
         let ThisPostTags = "";
         let ThisWalkTag="";
@@ -60,27 +57,27 @@
          ThisTag=ThisPost.category[TagNum].term;
          if (ThisTag == "@Day")
          {
-           ThisWalkTag="Solo Walk";
+           ThisWalkTag="Solo "+IndexType;
          } 
           else if (ThisTag == "@Meet")
        {
-         ThisWalkTag="Meet Walk";
+         ThisWalkTag="Meet "+IndexType;
        } 
           else if (ThisTag == "@Group")
        {
-         ThisWalkTag="Group Walk";
+         ThisWalkTag="Group "+IndexType;
        } 
           else if (ThisTag == "@Break")
        {
-         ThisWalkTag="Short Break Walk";
+         ThisWalkTag="Short Break "+IndexType;
        } 
           else if (ThisTag == "@Trip")
        {
-         ThisWalkTag="Trip Walk";
+         ThisWalkTag="Trip "+IndexType;
        } 
           else if (ThisTag == "@Work")
        {
-         ThisWalkTag="Work Walk";
+         ThisWalkTag="Work "+IndexType;
        } 
           else if (ThisTag == "Summary")
        {
@@ -90,8 +87,6 @@
        {
  ///  ignore
        } 
-//          else if (ThisTag == "2026")
-//          else if (ThisTag == IndexYear)
           else if (ThisTag > 1959)
        {
  ///  ignore as in the search criteria
