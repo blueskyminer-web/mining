@@ -37,7 +37,21 @@
   document.write("<li><B>" + currentMonth+" </B></li>");
  }
 
-  document.write("<B>"+parseInt(PostDays[EntryNum],10)+":&nbsp;"+PostWalk[EntryNum]+"</B>-&nbsp;");
+   
+//   fiddle to remove date from indexes....
+   if (parseInt(PostDays[EntryNum],10).isNaN) {
+     let DayNum="";
+   }
+   else {
+     DayNum = PostDays[EntryNum];
+ }
+// now exclude the formatting for the day and type
+      if(currentMonth=="Indexes") {
+        document.write("&nbsp;&nbsp;");
+      } else {
+  		document.write("<B>"+ DayNum +':&nbsp;'+PostWalk[EntryNum]+"</B>&nbsp;-&nbsp;");
+      }    
+///  write out the rest if the entry on two lines
   document.write('<a href ="'+PostURLs[EntryNum]+'" target="_blank">'+PostTitles[EntryNum]+"("+PostTags[EntryNum]+")</a>");
 //  document.write('<P style="text-indent:10px"><I>'+PostSummary[EntryNum]+"</I></P>");    }
   document.write('<ul style="list-style-type:none;"><li><I>'+PostSummary[EntryNum]+"</I></li></ul>");
