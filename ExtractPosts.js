@@ -1,5 +1,4 @@
-    // global variables 
- 
+   // global variables 
     let currentMonth = "";
     let currentYear = "";
     let PostTitles = new Array();
@@ -15,39 +14,45 @@
          {
            IndexType="Index";
          }
+  
 //       Function called when the extract returns  
   function LoadTheArchive(TotalFeed)
-{
-    if("entry" in TotalFeed.feed)
-    {
-      let PostEntries=TotalFeed.feed.entry.length;
-    for(var PostNum=0; PostNum<PostEntries ; PostNum++)
+  {
+      if("entry" in TotalFeed.feed)
       {
-      let ThisPost = TotalFeed.feed.entry[PostNum];
-      let AddThis = "Yes"; //so we can filter out some posts!
+      let PostEntries=TotalFeed.feed.entry.length;
+      for(let PostNum=0; PostNum<PostEntries ; PostNum++)
+       {
+           let ThisPost = TotalFeed.feed.entry[PostNum];
+           let AddThis = "Yes"; //so we can filter out some posts!
 
 // loop around the URLs to get the one we want
-      let ThisPostURL;
-      for(let LinkNum=0; LinkNum < ThisPost.link.length; LinkNum++)
-        {
-          if(ThisPost.link[LinkNum].rel == "alternate")
-          {
-             ThisPostURL = ThisPost.link[LinkNum].href;
-             break
-          }
-        }
+           let ThisPostURL;
+           for(let LinkNum=0; LinkNum < ThisPost.link.length; LinkNum++)
+           {
+              if(ThisPost.link[LinkNum].rel == "alternate")
+              {
+                 ThisPostURL = ThisPost.link[LinkNum].href;
+                 break
+              }
+           }
 
-        // shorten the summary if a more tag is found
-        let ThisSummaryFull=ThisPost.summary.$t;
-        let ThisSummaryShort=ThisSummaryFull;
-         if (ThisSummaryFull.includes("//")) {
-             ThisSummaryShort = ThisSummaryFull.substring(0,ThisSummaryFull.indexOf("//"))
+//  extract teh summary field ... need to cut out th ejavascript sections
+        let ThisPostSummary = ThisPost.summary.$t;
+         if (ThisPostSummary.includes("//")) {
+             ThisPostSummary = ThisPostSummary.substring(0,ThisPostSummary.indexOf("//"))
              }
-         else if (ThisSummaryFull.includes(".")) {
-              ThisSummaryShort = ThisSummaryFull.substring(0,ThisSummaryFull.lastIndexOf(".")+1)
+         else if (ThisPostSummary.includes(".")) {
+              ThisPostSummary = ThisPostSummary.substring(0,ThisPostSummary.lastIndexOf(".")+1)
                   }
-        
-        // loop around the categories (tags) to get them all in one field. And also manipulate the marker ones.
+         
+// Now fiddle the date for the index entries
+         let ThisPostDays = ThisPost.published.$t.substring(8,10);
+         let ThisPostMonth = ThisPost.published.$t.substring(5,7);
+         
+///  when we get tot eh tag marker then we will remove it if it is an index
+         
+         // loop around the categories (tags) to get them all in one field. And also manipulate the marker ones.
         let ThisPostTags = "";
         let ThisWalkTag="";
         let ThisTag="";
@@ -58,31 +63,36 @@
          ThisTag=ThisPost.category[TagNum].term;
          if (ThisTag == "@Day")
          {
-           ThisWalkTag="Solo "+ IndexType;
+           ThisWalkTag="Solo Trip";
          } 
           else if (ThisTag == "@Meet")
        {
-         ThisWalkTag="Meet "+ IndexType;
+         ThisWalkTag="Meet Trip";
        } 
           else if (ThisTag == "@Group")
        {
-         ThisWalkTag="Group "+ IndexType;
+         ThisWalkTag="Group Trip";
        } 
           else if (ThisTag == "@Break")
        {
-         ThisWalkTag="Short Break "+ IndexType;
+         ThisWalkTag="Short Break Trip";
        } 
           else if (ThisTag == "@Trip")
        {
-         ThisWalkTag="Trip "+ IndexType;
+         ThisWalkTag="Trip";
        } 
           else if (ThisTag == "@Work")
        {
-         ThisWalkTag="Work "+ IndexType;
+         ThisWalkTag="Work Trip";
        } 
-          else if (ThisTag == "Summary")
+          else if (ThisTag == "@Annual")
        {
-         AddThis="No";
+          if (IndexType == "Walk")
+          { AddThis="No";
+          } else {
+       		ThisPostDays = "";
+         	ThisPostMonth = 0;
+          }
        } 
           else if (ThisTag.substring(0,1) == "*")
        {
@@ -92,7 +102,15 @@
        {
  ///  ignore as in the search criteria
        } 
-          else if (ThisTag == "Walk")
+          else if (ThisTag == "Summary")
+       {
+          if (IndexType == "Walk")
+          { AddThis="No";
+          } else {
+// ignore
+          }
+       }
+          else if (ThisTag == "Index")
        {
  ///  ignore as in the Search Criteria
        }
@@ -122,21 +140,23 @@
          }
 
        }
-
-        if (AddThis=="Yes")
+    
+     
+     if (AddThis=="Yes")
         {
       PostTitles.push(ThisPost.title.$t);
       PostYears.push(ThisPost.published.$t.substring(0,4));
-      PostMonths.push(ThisPost.published.$t.substring(5,7));
-      PostDays.push(ThisPost.published.$t.substring(8,10));
+      PostMonths.push(ThisPostMonth);
+      PostDays.push(ThisPostDays);
+      PostSummary.push(ThisPostSummary);
       PostURLs.push(ThisPostURL);
       PostTags.push(ThisPostTags);
       PostWalk.push(ThisWalkTag);
-   	  PostSummary.push(ThisSummaryShort);
         }
         
         
    // loop around posts until finished
+   }
       }
-    }
-}
+  }
+
