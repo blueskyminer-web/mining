@@ -4,7 +4,7 @@
 
 //   Loop around each entry in the index (last first)
 
-  document.write("Index of "+NumberOfEntries+" walks <br/>");
+  document.write("Index of "+NumberOfEntries+" "+IndexType+"s <br/>");
 
   
 //    for(var EntryNum = 0; EntryNum < NumberOfEntries; EntryNum++)
