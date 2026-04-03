@@ -58,7 +58,7 @@
   document.write('<a href ="'+PostURLs[EntryNum]+'" target="_blank">'+PostTitles[EntryNum]+"("+PostTags[EntryNum]+")</a>");
 //  document.write('<P style="text-indent:10px"><I>'+PostSummary[EntryNum]+"</I></P>");    }
 if (OutputType =="Short") {
-	        document.write("</ul></ul>");
+	        document.write("<br />");
 } else {
   document.write('<ul style="list-style-type:none;"><li><I>'+PostSummary[EntryNum]+"</I></li></ul>");
 }
