@@ -1,4 +1,4 @@
- // global variables 
+    // global variables 
  
     let currentMonth = "";
     let currentYear = "";
@@ -11,8 +11,9 @@
     let PostWalk = new Array();
     let PostSummary = new Array();
 //        Sort out the diary entry type required
-         if (IndexType== "")
-         {IndexType="Index";
+         if (IndexType == "")
+         {
+           IndexType="Index";
          }
 //       Function called when the extract returns  
   function LoadTheArchive(TotalFeed)
@@ -57,27 +58,27 @@
          ThisTag=ThisPost.category[TagNum].term;
          if (ThisTag == "@Day")
          {
-           ThisWalkTag="Solo "+IndexType;
+           ThisWalkTag="Solo "+ IndexType;
          } 
           else if (ThisTag == "@Meet")
        {
-         ThisWalkTag="Meet "+IndexType;
+         ThisWalkTag="Meet "+ IndexType;
        } 
           else if (ThisTag == "@Group")
        {
-         ThisWalkTag="Group "+IndexType;
+         ThisWalkTag="Group "+ IndexType;
        } 
           else if (ThisTag == "@Break")
        {
-         ThisWalkTag="Short Break "+IndexType;
+         ThisWalkTag="Short Break "+ IndexType;
        } 
           else if (ThisTag == "@Trip")
        {
-         ThisWalkTag="Trip "+IndexType;
+         ThisWalkTag="Trip "+ IndexType;
        } 
           else if (ThisTag == "@Work")
        {
-         ThisWalkTag="Work "+IndexType;
+         ThisWalkTag="Work "+ IndexType;
        } 
           else if (ThisTag == "Summary")
        {
