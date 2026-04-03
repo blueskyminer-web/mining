@@ -39,6 +39,7 @@
 
   document.write("<B>"+parseInt(PostDays[EntryNum],10)+":&nbsp;"+PostWalk[EntryNum]+"</B>-&nbsp;");
   document.write('<a href ="'+PostURLs[EntryNum]+'" target="_blank">'+PostTitles[EntryNum]+"("+PostTags[EntryNum]+")</a>");
+  document.write("<BR />");
 //  document.write('<P style="text-indent:10px"><I>'+PostSummary[EntryNum]+"</I></P>");    }
 //  document.write('<ul style="list-style-type:none;"><li><I>'+PostSummary[EntryNum]+"</I></li></ul>");
     }
