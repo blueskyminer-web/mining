@@ -63,27 +63,27 @@
          ThisTag=ThisPost.category[TagNum].term;
          if (ThisTag == "@Day")
          {
-           ThisWalkTag="Solo Trip";
+           ThisWalkTag="Solo" + IndexType;
          } 
           else if (ThisTag == "@Meet")
        {
-         ThisWalkTag="Meet Trip";
+         ThisWalkTag="Meet " + IndexType;
        } 
           else if (ThisTag == "@Group")
        {
-         ThisWalkTag="Group Trip";
+         ThisWalkTag="Group "  + IndexType;
        } 
           else if (ThisTag == "@Break")
        {
-         ThisWalkTag="Short Break Trip";
+         ThisWalkTag="Short Break " + IndexType;
        } 
           else if (ThisTag == "@Trip")
        {
-         ThisWalkTag="Trip";
+         ThisWalkTag="Trip " + IndexType;
        } 
           else if (ThisTag == "@Work")
        {
-         ThisWalkTag="Work Trip";
+         ThisWalkTag="Work " + IndexType;
        } 
           else if (ThisTag == "@Annual")
        {
