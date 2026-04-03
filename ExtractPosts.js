@@ -79,7 +79,11 @@
        } 
           else if (ThisTag == "@Trip")
        {
-         ThisWalkTag="Trip " + IndexType;
+           if (IndexType == "Walk")
+          {         ThisWalkTag="Trip " + IndexType;
+          } else {
+// ignore
+          }
        } 
           else if (ThisTag == "@Work")
        {
