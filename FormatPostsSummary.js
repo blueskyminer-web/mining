@@ -1,5 +1,5 @@
   // Now we have the posts we just need to format them onto the page
-    var MonthNames=["January","February","March","April","May","June","July","August","September","October","November","December"];
+    var MonthNames=["Indexes","January","February","March","April","May","June","July","August","September","October","November","December"];
     var NumberOfEntries=PostTitles.length;
 
 //   Loop around each entry in the index (last first)
@@ -10,7 +10,7 @@
 //    for(var EntryNum = 0; EntryNum < NumberOfEntries; EntryNum++)
     for(var EntryNum = NumberOfEntries - 1; EntryNum >= 0; EntryNum--)
     {
- NameOfMonth = MonthNames[parseInt(PostMonths[EntryNum],10)-1]
+ NameOfMonth = MonthNames[parseInt(PostMonths[EntryNum],10)]
  let TagList = PostTags[EntryNum];
  if (TagList !== "") {
    TagList = "(" + TagList + ")"
