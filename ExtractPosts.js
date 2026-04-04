@@ -101,7 +101,7 @@
        {
           if (IndexType == "Walk")
           { AddThis="No";
-          } else if (ThisPostTitle.contains("Overview"))
+          } else if (ThisPostTitle.includes("Overview"))
           {
        		ThisPostDays = "";
          	ThisPostMonth = 13;
