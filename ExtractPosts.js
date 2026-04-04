@@ -152,7 +152,12 @@
          }
 
        }
-    
+// if tags exist then wrap in brackets
+          if (ThisPostTags =="") {
+//leave blank
+          }else{
+             ThisPostTags="("+ThisPostTags+")";
+          }
      
      if (AddThis=="Yes")
         {
