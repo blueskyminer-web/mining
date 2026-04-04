@@ -63,7 +63,7 @@
          ThisTag=ThisPost.category[TagNum].term;
          if (ThisTag == "@Day")
          {
-           ThisWalkTag="Solo" + IndexType;
+           ThisWalkTag="Solo " + IndexType;
          } 
           else if (ThisTag == "@Meet")
        {
@@ -76,6 +76,14 @@
           else if (ThisTag == "@Break")
        {
          ThisWalkTag="Short Break " + IndexType;
+       } 
+          else if (ThisTag == "Ski Tour")
+       {
+         ThisWalkTag="Ski Tour " + IndexType;
+       } 
+          else if (ThisTag == "ski")
+       {
+         ThisWalkTag="Ski " + IndexType;
        } 
           else if (ThisTag == "@Trip")
        {
