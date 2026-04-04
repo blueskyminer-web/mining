@@ -49,7 +49,7 @@
      DayNum = PostDays[EntryNum];
  }
 // now exclude the formatting for the day and type
-      if(currentMonth=="Indexes") {
+      if(currentMonth=="Indexes" || currentMonth=="Overview") {
         document.write("&nbsp;&nbsp;");
       } else {
   		document.write("<B>"+ DayNum +':&nbsp;'+PostWalk[EntryNum]+"</B>&nbsp;-&nbsp;");
