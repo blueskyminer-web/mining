@@ -55,7 +55,7 @@
   		document.write("<B>"+ DayNum +':&nbsp;'+PostWalk[EntryNum]+"</B>&nbsp;-&nbsp;");
       }    
 ///  write out the rest if the entry on two lines
-  document.write('<a href ="'+PostURLs[EntryNum]+'" target="_blank">'+PostTitles[EntryNum]+PostTags[EntryNum]+"</a>");
+  document.write('<a href ="'+PostURLs[EntryNum]+'" target="_blank">'+PostTitles[EntryNum]+" "+PostTags[EntryNum]+"</a>");
 //  document.write('<P style="text-indent:10px"><I>'+PostSummary[EntryNum]+"</I></P>");    }
 if (OutputType =="Short") {
 	        document.write("<br />");
