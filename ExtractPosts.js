@@ -50,8 +50,8 @@
          let ThisPostDays = ThisPost.published.$t.substring(8,10);
          let ThisPostMonth = ThisPost.published.$t.substring(5,7);
          
-///  when we get tot eh tag marker then we will remove it if it is an index
-         
+///  extract the title so we can process it later
+         let ThisPostTitle = ThisPost.title.$t;
          // loop around the categories (tags) to get them all in one field. And also manipulate the marker ones.
         let ThisPostTags = "";
         let ThisWalkTag="";
@@ -101,6 +101,10 @@
        {
           if (IndexType == "Walk")
           { AddThis="No";
+          } else if (ThsPostTitle.contains("Overview"))
+          {
+       		ThisPostDays = "";
+         	ThisPostMonth = 13;
           } else {
        		ThisPostDays = "";
          	ThisPostMonth = 0;
@@ -160,7 +164,7 @@
      
      if (AddThis=="Yes")
         {
-      PostTitles.push(ThisPost.title.$t);
+      PostTitles.push(ThisPostTitle);
       PostYears.push(ThisPost.published.$t.substring(0,4));
       PostMonths.push(ThisPostMonth);
       PostDays.push(ThisPostDays);
