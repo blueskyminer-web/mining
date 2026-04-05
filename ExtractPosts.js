@@ -10,11 +10,13 @@
     let PostWalk = new Array();
     let PostSummary = new Array();
 //        Sort out the diary entry type required
-         if (IndexType == "")
-         {
+  if (typeof IndexType === 'undefined' || IndexType === null) {
            IndexType="Index";
          }
-  
+//    soprt out the order of display
+  if (typeof ListOrder === 'undefined' || ListOrder === null) {
+    ListOrder = "Reverse";
+}
 //       Function called when the extract returns  
   function LoadTheArchive(TotalFeed)
   {
