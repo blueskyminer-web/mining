@@ -24,7 +24,7 @@
 
 		NameOfMonth = MonthNames[parseInt(PostMonths[EntryNum],10)]
  let TagList = PostTags[EntryNum];
- if (TagList !=== null) {
+ if (TagList !== "") {
    TagList = "(" + TagList + ")"
  }
                 
