@@ -17,6 +17,10 @@
   if (typeof ListOrder === 'undefined' || ListOrder === null) {
     ListOrder = "Reverse";
 }
+//        Sort out the summary entry type required
+  if (typeof OutputType === 'undefined' || OutputType === null) {
+           OutputType="Short";
+         }
 //       Function called when the extract returns  
   function LoadTheArchive(TotalFeed)
   {
