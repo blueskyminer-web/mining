@@ -1,9 +1,6 @@
   // Now we have the posts we just need to format them onto the page
     var MonthNames=["Indexes","January","February","March","April","May","June","July","August","September","October","November","December","Overview"];
     var NumberOfEntries=PostTitles.length;
-	if (OutputType == "") {
-		OutputType = "Short";
-	}
 
 //   Loop around each entry in the index (last first)
 
