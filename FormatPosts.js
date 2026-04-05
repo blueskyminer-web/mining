@@ -7,15 +7,27 @@
 
 //   Loop around each entry in the index (last first)
 
-  document.write("Index of "+NumberOfEntries+" "+IndexType+"s <br/>");
+  document.write("Index of "+NumberOfEntries+" "+IndexType+"s ");
+	if (ListOrder == "Chrono") {
+        document.write("in Chronological Order <br/>");
+    } else {
+        document.write("in Reverse Chronological Order <br/>");
+    }
 
   
 //    for(var EntryNum = 0; EntryNum < NumberOfEntries; EntryNum++)
-    for(var EntryNum = NumberOfEntries - 1; EntryNum >= 0; EntryNum--)
+    for(var IndexNum = 0; IndexNum < NumberOfEntries; IndexNum++)
+//    for(var EntryNum = NumberOfEntries - 1; EntryNum >= 0; EntryNum--)
     {
- NameOfMonth = MonthNames[parseInt(PostMonths[EntryNum],10)]
+      if (ListOrder == "Chrono") {
+        EntryNum = NumberOfEntries - IndexNum - 1;
+      } else {
+        EntryNum = IndexNum
+      }
+
+		NameOfMonth = MonthNames[parseInt(PostMonths[EntryNum],10)]
  let TagList = PostTags[EntryNum];
- if (TagList !== "") {
+ if (TagList !=== null) {
    TagList = "(" + TagList + ")"
  }
                 
