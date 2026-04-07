@@ -83,6 +83,10 @@
        {
          ThisWalkTag="Short Break " + IndexType;
        } 
+          else if (ThisTag == "@Holiday")
+       {
+         ThisWalkTag="Holiday " + IndexType;
+       } 
           else if (ThisTag == "Ski Tour")
        {
          ThisWalkTag="Ski Tour " + IndexType;
@@ -149,6 +153,10 @@
  ///  ignore as group name
        }
           else if (ThisTag == "WACT")
+       {
+ ///  ignore as group name
+       } 
+          else if (ThisTag == "Old Farts")
        {
  ///  ignore as group name
        } 
