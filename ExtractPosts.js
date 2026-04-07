@@ -132,6 +132,10 @@
 // ignore
           }
        }
+          else if (ThisTag == "Walk")
+       {
+ ///  ignore as in the Search Criteria
+       }
           else if (ThisTag == "Index")
        {
  ///  ignore as in the Search Criteria
