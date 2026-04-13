@@ -9,6 +9,7 @@
     let PostTags = new Array();
     let PostWalk = new Array();
     let PostSummary = new Array();
+    let Processed = 0;
 //        Sort out the diary entry type required "Index" or "Walk" or "Trip"
   if (typeof IndexType === 'undefined' || IndexType === null) {
            IndexType="Index";
@@ -203,6 +204,8 @@
         
    // loop around posts until finished
    }
+         Processed=Processed+PostEntries;
       }
+     Document.write(Processed+"Processed<BR/>");
   }
 
