@@ -206,6 +206,5 @@
    }
          Processed=Processed+PostEntries;
       }
-     Document.write(Processed+"Processed<BR/>");
+     document.write(Processed+"Processed<BR/>");
   }
-
