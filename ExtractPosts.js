@@ -9,15 +9,15 @@
     let PostTags = new Array();
     let PostWalk = new Array();
     let PostSummary = new Array();
-//        Sort out the diary entry type required
+//        Sort out the diary entry type required "Index" or "Walk"
   if (typeof IndexType === 'undefined' || IndexType === null) {
            IndexType="Index";
          }
-//    soprt out the order of display
+//    soprt out the order of display "Reverse" or "Chrono"
   if (typeof ListOrder === 'undefined' || ListOrder === null) {
     ListOrder = "Reverse";
 }
-//        Sort out the summary entry type required
+//        Sort out the summary entry type required "Short" or "Summary"
   if (typeof OutputType === 'undefined' || OutputType === null) {
            OutputType="Short";
          }
@@ -90,6 +90,14 @@
           else if (ThisTag == "Ski Tour")
        {
          ThisWalkTag="Ski Tour " + IndexType;
+       } 
+          else if (ThisTag == "Mountaineering")
+       {
+         ThisWalkTag="Mountaineering " + IndexType;
+       } 
+          else if (ThisTag == "Rock Climbing")
+       {
+         ThisWalkTag="Rock Climbing " + IndexType;
        } 
           else if (ThisTag == "ski")
        {
