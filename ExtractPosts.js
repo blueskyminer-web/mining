@@ -22,6 +22,7 @@
   if (typeof OutputType === 'undefined' || OutputType === null) {
            OutputType="Short";
          }
+document.write("Selecting Records ");
 //       Function called when the extract returns  
   function LoadTheArchive(TotalFeed)
   {
