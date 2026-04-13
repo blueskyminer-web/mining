@@ -206,7 +206,7 @@
    }
          Processed=Processed+PostEntries;
       }
-     document.write(Processed+" Processed ");
+     document.write(" . ");
 //       document.getElementById("progress").innerHTML = Processed+" Processed<br/>;
 
   }
