@@ -4,6 +4,7 @@
 
 //   Loop around each entry in the index (last first)
 
+  document.write("Processed "+Processed+"<br/>");
   document.write("Index of "+NumberOfEntries+" "+IndexType+"s ");
 	if (ListOrder == "Chrono") {
         document.write("in Chronological Order <br/>");
