@@ -9,7 +9,7 @@
     let PostTags = new Array();
     let PostWalk = new Array();
     let PostSummary = new Array();
-//        Sort out the diary entry type required "Index" or "Walk"
+//        Sort out the diary entry type required "Index" or "Walk" or "Trip"
   if (typeof IndexType === 'undefined' || IndexType === null) {
            IndexType="Index";
          }
